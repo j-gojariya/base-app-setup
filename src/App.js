@@ -1,25 +1,15 @@
-import './App.css';
-import logo from './logo.svg';
+import { memo } from 'react';
+
+import AllRoutes from 'routes/AllRoutes';
+import './app.less';
+import './responsive.less';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img alt="logo" className="App-logo" src={logo} />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Learn React
-        </a>
-      </header>
+      <AllRoutes />
     </div>
   );
 }
 
-export default App;
+export default memo(App);

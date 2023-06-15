@@ -1,0 +1,213 @@
+@import '../../configs/themeVariables.less';
+
+.login {
+  height: 100vh;
+  .login-left {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    h2 {
+      font-weight: 500;
+      color: @white;
+      margin-bottom: 50px;
+    }
+    img {
+      height: 55%;
+    }
+  }
+
+  .login-form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .wrapper {
+      width: 50%;
+    }
+    img {
+      padding-bottom: 30px;
+      display: flex;
+      margin: auto;
+    }
+    h3 {
+      font-weight: 700;
+      line-height: 28px;
+      margin-bottom: 0;
+      text-transform: capitalize;
+      color: @text-color;
+    }
+    h5 {
+      color: @gray;
+      margin: 0 0 20px 0;
+      padding: 0;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    .primary-btn {
+      width: 100%;
+      margin-top: 30px;
+      height: 40px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .ant-form-item {
+      margin-bottom: 12px;
+    }
+    .ant-form-item-label {
+      padding: 0 0 3px 0;
+    }
+    label {
+      color: @text-color;
+      font-weight: 500;
+    }
+    .input,
+    .ant-input-password {
+      height: 40px !important;
+    }
+    .signup-text {
+      text-align: center;
+      a {
+        color: @primary;
+        font-weight: 600;
+      }
+    }
+    .footer {
+      position: absolute;
+      bottom: 0;
+    }
+    .ant-select {
+      box-shadow: 0px 1px 15px rgb(223 223 223);
+      .ant-select-selector {
+        height: 40px;
+        align-items: center;
+        background: @white-base !important;
+        border: 0.5px solid @primary !important;
+        border-radius: 6px !important;
+        box-shadow: none !important;
+      }
+      .anticon-down {
+        color: @primary;
+        svg {
+          stroke: @primary;
+          stroke-width: 20px;
+        }
+      }
+    }
+    .tandc {
+      color: @gray;
+      font-weight: 500;
+      a {
+        color: @text-color;
+      }
+    }
+    .forgotpassword-link {
+      margin-bottom: 0;
+      .ant-form-item-control-input-content {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.signup {
+  .login-left {
+    h1 {
+      font-weight: 500;
+      color: @white;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    h4 {
+      font-weight: 300;
+      color: @white;
+      width: 55%;
+      font-size: 16px;
+      line-height: 19px;
+      padding-top: 0;
+      margin: 0 auto 80px auto;
+    }
+    .vertical-middle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  }
+  .slick-dots {
+    bottom: 18% !important;
+    button {
+      width: 10px !important;
+      height: 10px !important;
+      border-radius: 100px !important;
+      background: @light-primary !important;
+      opacity: 1 !important;
+    }
+    .slick-active {
+      width: 16px !important;
+      button {
+        background: @primary !important;
+      }
+    }
+  }
+  .steps {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+}
+
+.forgot-password {
+  .login-form {
+    .primary-btn {
+      margin-top: 20px;
+    }
+    img {
+      padding-bottom: 50px;
+    }
+    .signup-text {
+      margin-top: 12px;
+    }
+  }
+  .login-left {
+    h1 {
+      font-weight: 500;
+      color: @white;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    h4 {
+      font-weight: 300;
+      color: @white;
+      width: 55%;
+      font-size: 16px;
+      line-height: 19px;
+      padding-top: 0;
+      margin-top: 0;
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.otp-input {
+  input {
+    width: 3em !important;
+    height: 3em !important;
+    border-radius: 4px;
+    box-shadow: none !important;
+    border: 1px solid #cbcbcb;
+  }
+}
+.otp {
+  .ant-form-item-control-input-content div:nth-child(1) {
+    justify-content: space-between;
+  }
+}
+
