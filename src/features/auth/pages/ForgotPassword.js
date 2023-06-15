@@ -1,16 +1,17 @@
 import { Button, Col, Form, Input, Row, Typography } from 'antd';
 import { memo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../common.less';
+import '../auth.less';
 
 import ECHOIMAGES from 'assets/Images';
 import ImageView from 'components/base/ImageView';
 
 import AuthFooter from '../components/AuthFooter';
+import Slogan from '../components/Slogan';
 
 function ForgotPassword() {
   const navigate = useNavigate();
-  const { ForgotPassword, Background, AuthLogo } = ECHOIMAGES.Auth;
+  const { ForgotPassword, Background, ProxyIQLogo } = ECHOIMAGES.Auth;
   const [loading, setLoading] = useState(false);
 
   const handleResetPassword = async () => {
@@ -31,15 +32,14 @@ function ForgotPassword() {
         xs={0}
       >
         <div className="login-left">
-          <Typography.Title level={1}>Slogan</Typography.Title>
-          <Typography.Title level={4}>Here</Typography.Title>
+          <Slogan />
           <ImageView alt="ForgotPassword" src={ForgotPassword} />
         </div>
       </Col>
 
       <Col className="login-form" lg={12} md={24} sm={24} span={12} xs={24}>
         <div className="wrapper">
-          <ImageView alt="AuthLogo" src={AuthLogo} />
+          <ImageView alt="logo" src={ProxyIQLogo} />
           <Typography.Title level={3}>Forgot your password?</Typography.Title>
           <Typography.Title level={5}>
             {`No worries. We'll send reset instructions to your email.`}

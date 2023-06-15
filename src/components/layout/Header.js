@@ -15,7 +15,8 @@ import {
   Row,
   Typography,
 } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const { Header } = Layout;
 const { Text } = Typography;
@@ -23,8 +24,26 @@ const { Text } = Typography;
 export default function HeaderMenu({ showDrawer }) {
   const navigate = useNavigate();
   const { useBreakpoint } = Grid;
-
   const screens = useBreakpoint();
+
+  const location = useLocation();
+  const [pageName, setPageName] = useState('');
+
+  useEffect(() => {
+    // Extract the page name from the URL
+    const { pathname } = location;
+    let name = '';
+
+    if (pathname === '/dashboard' || pathname === '/') {
+      name = 'Dashboard';
+    } else if (pathname === '/profile') {
+      name = 'Profile';
+    } else if (pathname === '/supply-order') {
+      name = 'Supply Order';
+    }
+
+    setPageName(name);
+  }, [location]);
 
   const handleSignOut = () => {};
 
@@ -61,7 +80,7 @@ export default function HeaderMenu({ showDrawer }) {
             className="mb-0 title text-black fw-bolder"
             level={4}
           >
-            Dashboard
+            {pageName}
           </Typography.Title>
         </Row>
         <Row align="middle">

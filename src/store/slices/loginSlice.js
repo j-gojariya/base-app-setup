@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   groups: ['HOSPITAL'],
-  token: '23',
+  token: '123',
   userData: null,
 };
 /* eslint-disable */

@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 import ECHOIMAGES from 'assets/Images';
 import ImageView from 'components/base/ImageView';
 
-import '../common.less';
+import '../auth.less';
 import AuthFooter from '../components/AuthFooter';
+import Slogan from '../components/Slogan';
 
 function Login() {
-  const { LoginImg, Background, AuthLogo } = ECHOIMAGES.Auth;
+  const { LoginImg, Background, ProxyIQLogo } = ECHOIMAGES.Auth;
 
   const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();
@@ -29,16 +30,13 @@ function Login() {
         xs={0}
       >
         <div className="login-left">
-          <Typography.Title level={2}>
-            Slogan
-            <br /> Here
-          </Typography.Title>
+          <Slogan />
           <ImageView alt="LoginImg" src={LoginImg} />
         </div>
       </Col>
       <Col className="login-form" lg={12} md={24} sm={24} span={12} xs={24}>
         <div className="wrapper">
-          <ImageView alt="AuthLogo" src={AuthLogo} />
+          <ImageView alt="logo" src={ProxyIQLogo} />
 
           <Typography.Title level={3}>Login</Typography.Title>
           <Typography.Title level={5}>

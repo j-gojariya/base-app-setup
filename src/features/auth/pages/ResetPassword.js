@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom';
 import ECHOIMAGES from 'assets/Images';
 import ImageView from 'components/base/ImageView';
 
-import '../common.less';
+import '../auth.less';
 import AuthFooter from '../components/AuthFooter';
+import Slogan from '../components/Slogan';
 
 function ResetPassword() {
-  const { ForgotPassword, Background, AuthLogo } = ECHOIMAGES.Auth;
+  const { ForgotPassword, Background, ProxyIQLogo } = ECHOIMAGES.Auth;
   const [form] = Form.useForm();
   const [otp, setOtp] = useState('');
   const [loading, setLoading] = useState(false);
@@ -41,15 +42,14 @@ function ResetPassword() {
         xs={0}
       >
         <div className="login-left">
-          <Typography.Title level={1}>Slogan</Typography.Title>
-          <Typography.Title level={4}>Here</Typography.Title>
+          <Slogan />
           <ImageView alt="ForgotPassword" src={ForgotPassword} />
         </div>
       </Col>
 
       <Col className="login-form" lg={12} md={24} sm={24} span={12} xs={24}>
         <div className="wrapper">
-          <ImageView alt="AuthLogo" src={AuthLogo} />
+          <ImageView alt="logo" src={ProxyIQLogo} />
 
           <Typography.Title level={3}>Forgot your password?</Typography.Title>
           <Typography.Title level={5}>

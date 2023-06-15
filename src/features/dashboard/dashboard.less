@@ -1,0 +1,130 @@
+@import '../../configs/themeVariables.less';
+
+.dashboard-table {
+  margin-top: 20px;
+  thead.ant-table-thead tr {
+    border-radius: 10px !important;
+  }
+  .ant-table-tbody {
+    .up-column {
+      animation: up-highlight-animate-head 2s ease-in-out;
+      transition: 0.1s;
+    }
+    .down-column {
+      animation: down-highlight-animate-head 2s ease-in-out;
+      transition: 0.1s;
+    }
+  }
+}
+
+@keyframes up-highlight-animate-head {
+  0% {
+    background: #a9d778;
+  }
+  100% {
+    background: transparent;
+  }
+}
+@keyframes down-highlight-animate-head {
+  0% {
+    background: #ee5735;
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+.rank-div {
+  .up-icon {
+    color: #92d050;
+    font-size: 16px;
+  }
+  .down-icon {
+    color: #ff4519;
+    font-size: 16px;
+  }
+  align-items: center;
+  display: flex;
+  gap: 5px;
+}
+
+.pending-items {
+  .background-white {
+    padding: 20px;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    h3 {
+      color: @text-color;
+      margin-bottom: 0;
+    }
+    h5 {
+      color: @gray-text;
+      font-size: 15px;
+      margin-top: 0;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.box-wrapper {
+  // display: flex;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  .box {
+    flex-grow: 1;
+    flex-basis: 0px;
+    height: 130px;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: @white-base;
+    border: 1px solid @slider-dots-border-color;
+    box-shadow: 0px 5px 20px rgba(23, 129, 197, 0.05);
+    border-radius: 6px;
+    h1 {
+      color: @text-color;
+      margin-bottom: 0;
+      font-weight: bolder;
+    }
+    h5 {
+      color: @text-color;
+      font-size: 15px;
+      margin-top: 0;
+      font-weight: 600;
+      margin-bottom: 0;
+      width: 70%;
+    }
+  }
+}
+
+.box-wrapper.counting {
+  .box {
+    background: #fffaf0;
+    border: 1px solid rgba(255, 164, 0, 0.4);
+    box-shadow: 0px 5px 20px rgba(23, 129, 197, 0.05);
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    padding: 22px 40px;
+    gap: 14px;
+    h1 {
+      font-weight: 800;
+      font-size: 38px;
+      line-height: 46px;
+    }
+    h3 {
+      font-weight: 600;
+      font-size: 21px;
+      line-height: 20px;
+    }
+  }
+}
+
