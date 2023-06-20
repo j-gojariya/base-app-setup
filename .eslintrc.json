@@ -53,6 +53,7 @@
     "no-shadow": "off",
     "global-require": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/prefer-default-export": ["off", { "target": "any" }],
     // "import/no-extraneous-dependencies": [
     //   "error",
     //   {

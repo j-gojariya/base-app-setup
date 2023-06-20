@@ -3,7 +3,7 @@ import { useState } from 'react';
 import OTPInput from 'react-otp-input';
 import { Link } from 'react-router-dom';
 
-import ECHOIMAGES from 'assets/Images';
+import PROXY_IQ_IMAGES from 'assets/Images';
 import ImageView from 'components/base/ImageView';
 
 import '../auth.less';
@@ -11,7 +11,7 @@ import AuthFooter from '../components/AuthFooter';
 import Slogan from '../components/Slogan';
 
 function ResetPassword() {
-  const { ForgotPassword, Background, ProxyIQLogo } = ECHOIMAGES.Auth;
+  const { ForgotPassword, Background, ProxyIQLogo } = PROXY_IQ_IMAGES.AuthIcon;
   const [form] = Form.useForm();
   const [otp, setOtp] = useState('');
   const [loading, setLoading] = useState(false);

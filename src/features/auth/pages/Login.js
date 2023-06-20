@@ -2,7 +2,7 @@ import { Button, Col, Form, Input, Row, Typography } from 'antd';
 import { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import ECHOIMAGES from 'assets/Images';
+import PROXY_IQ_IMAGES from 'assets/Images';
 import ImageView from 'components/base/ImageView';
 
 import '../auth.less';
@@ -10,7 +10,7 @@ import AuthFooter from '../components/AuthFooter';
 import Slogan from '../components/Slogan';
 
 function Login() {
-  const { LoginImg, Background, ProxyIQLogo } = ECHOIMAGES.Auth;
+  const { LoginImg, Background, ProxyIQLogo } = PROXY_IQ_IMAGES.AuthIcon;
 
   const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();

@@ -3,7 +3,7 @@ import { memo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../auth.less';
 
-import ECHOIMAGES from 'assets/Images';
+import PROXY_IQ_IMAGES from 'assets/Images';
 import ImageView from 'components/base/ImageView';
 
 import AuthFooter from '../components/AuthFooter';
@@ -11,7 +11,7 @@ import Slogan from '../components/Slogan';
 
 function ForgotPassword() {
   const navigate = useNavigate();
-  const { ForgotPassword, Background, ProxyIQLogo } = ECHOIMAGES.Auth;
+  const { ForgotPassword, Background, ProxyIQLogo } = PROXY_IQ_IMAGES.AuthIcon;
   const [loading, setLoading] = useState(false);
 
   const handleResetPassword = async () => {

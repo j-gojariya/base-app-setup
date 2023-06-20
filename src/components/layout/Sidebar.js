@@ -1,7 +1,7 @@
 import { Grid } from 'antd';
 import Sider from 'antd/es/layout/Sider';
 
-import ECHOIMAGES from 'assets/Images';
+import PROXY_IQ_IMAGES from 'assets/Images';
 import ImageView from 'components/base/ImageView';
 
 import FooterMenu from './Footer';
@@ -16,7 +16,7 @@ export default function Sidebar({
   const { useBreakpoint } = Grid;
   const screens = useBreakpoint();
 
-  const { ProxyIQLogo } = ECHOIMAGES.Auth;
+  const { ProxyIQLogo } = PROXY_IQ_IMAGES.AuthIcon;
 
   return (
     <Sider
