@@ -12,6 +12,7 @@ import {
   Tag,
 } from 'antd';
 import { memo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import PROXY_IQ_IMAGES from 'assets/Images';
 import useSortableTable from 'hooks/useSortableData';
@@ -22,6 +23,7 @@ import ExportOrderBtn from './ExportOrderBtn';
 import SupplyOrderFilter from './SupplyOrderFilter';
 
 function SupplyOrderList() {
+  const navigate = useNavigate();
   const { SortIcon, FilterIcon } = PROXY_IQ_IMAGES.CommonIcon;
   const { useBreakpoint } = Grid;
   const screens = useBreakpoint();
@@ -31,6 +33,7 @@ function SupplyOrderList() {
   const { Search } = Input;
   const dataSource = [
     {
+      id: 'a1b2c3d4e5f6g7h8',
       key: '1',
       name: 'Mike',
       age: 32,
@@ -40,6 +43,7 @@ function SupplyOrderList() {
       status: 'Order received',
     },
     {
+      id: '2i3j4k5l6m7n8o9',
       key: '2',
       name: 'John',
       age: 42,
@@ -49,6 +53,7 @@ function SupplyOrderList() {
       status: 'Document  received',
     },
     {
+      id: 'p0q1r2s3t4u5v6w7',
       key: '3',
       name: 'Sarah',
       age: 28,
@@ -58,6 +63,7 @@ function SupplyOrderList() {
       status: 'Vendor notified',
     },
     {
+      id: '8x9y0z1a2b3c4d5',
       key: '4',
       name: 'Emily',
       age: 35,
@@ -67,6 +73,7 @@ function SupplyOrderList() {
       status: 'Vendor notified',
     },
     {
+      id: 'e6f7g8h9i0j1k2l3',
       key: '5',
       name: 'David',
       age: 40,
@@ -76,6 +83,7 @@ function SupplyOrderList() {
       status: 'Vendor notified',
     },
     {
+      id: 'm4n5o6p7q8r9s0t1',
       key: '6',
       name: 'Jessica',
       age: 27,
@@ -85,6 +93,7 @@ function SupplyOrderList() {
       status: 'Vendor notified',
     },
     {
+      id: 'u2v3w4x5y6z7a8b9',
       key: '7',
       name: 'Daniel',
       age: 45,
@@ -94,6 +103,7 @@ function SupplyOrderList() {
       status: 'Vendor notified',
     },
     {
+      id: 'c0d1e2f3g4h5i6j7',
       key: '8',
       name: 'Sophia',
       age: 31,
@@ -103,6 +113,7 @@ function SupplyOrderList() {
       status: 'Vendor notified',
     },
     {
+      id: 'k8l9m0n1o2p3q4r5',
       key: '9',
       name: 'Liam',
       age: 33,
@@ -112,6 +123,7 @@ function SupplyOrderList() {
       status: 'Vendor notified',
     },
     {
+      id: 's6t7u8v9w0x1y2z3',
       key: '10',
       name: 'Olivia',
       age: 29,
@@ -169,6 +181,13 @@ function SupplyOrderList() {
   const filterSettings = {
     open,
     setOpen,
+  };
+
+  const handleRowClick = (record) => {
+    navigate({
+      pathname: `/supply-order/${record.id}`,
+      state: { data: record },
+    });
   };
 
   const { sortedData, sortTable, handleSearch } = useSortableTable(tableData);
@@ -264,6 +283,9 @@ function SupplyOrderList() {
               className="dashboard-table"
               columns={columns}
               dataSource={sortedData}
+              onRow={(record) => ({
+                onClick: () => handleRowClick(record),
+              })}
               pagination={PAGINATION_CONFIG}
             />
           )}

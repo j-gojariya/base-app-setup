@@ -24,6 +24,7 @@
     "redux": "^4.2.1",
     "redux-debounced": "^0.5.0",
     "redux-persist": "^6.0.0",
+    "redux-persist-transform-encrypt": "^5.0.0",
     "styled-components": "^6.0.0-rc.3",
     "web-vitals": "^2.1.0"
   },
