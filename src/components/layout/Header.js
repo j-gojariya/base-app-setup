@@ -16,36 +16,41 @@ import {
   Typography,
 } from 'antd';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+
+import { getUserData } from 'store/slices/loginSlice';
 
 const { Header } = Layout;
 const { Text } = Typography;
 
 export default function HeaderMenu({ showDrawer }) {
+  const userData = useSelector(getUserData);
   const navigate = useNavigate();
   const { useBreakpoint } = Grid;
   const screens = useBreakpoint();
-
   const location = useLocation();
+  const { pathname } = location;
   const [pageName, setPageName] = useState('');
 
   useEffect(() => {
     // Extract the page name from the URL
-    const { pathname } = location;
     let name = '';
-
-    if (pathname === '/dashboard' || pathname === '/') {
+    const pathParts = pathname.split('/'); // Split the URL into parts
+    if (pathParts[1] === 'dashboard' || pathParts[1] === '') {
       name = 'Dashboard';
-    } else if (pathname === '/profile') {
+    } else if (pathParts[1] === 'profile') {
       name = 'Profile';
-    } else if (pathname === '/supply-order') {
+    } else if (pathParts[1] === 'supply-order') {
       name = 'Supply Order';
     }
-
     setPageName(name);
-  }, [location]);
+  }, [pathname]);
 
-  const handleSignOut = () => {};
+  const handleSignOut = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
 
   const userMenu = (
     <Menu
@@ -97,7 +102,7 @@ export default function HeaderMenu({ showDrawer }) {
                   className={screens.xs ? 'mb-5' : 'mr-10 mb-5'}
                   icon={<UserOutlined />}
                 />
-                {screens.xs ? <> </> : localStorage.getItem('given_name')}
+                {screens.xs ? <> </> : userData?.firstName}
                 <DownOutlined
                   style={{
                     padding: screens.xs ? 0 : '0px 10px',

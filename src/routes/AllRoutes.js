@@ -1,6 +1,8 @@
 import { lazy } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
+import SupplyOrderDetail from 'features/supplyOrderDetail/pages/SupplyOrderDetail';
+
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
@@ -37,6 +39,10 @@ function AllRoutes() {
         <Route
           element={<PrivateRoute component={SupplyOrder} />}
           path="/supply-order"
+        />
+        <Route
+          element={<PrivateRoute component={SupplyOrderDetail} />}
+          path="/supply-order/:orderId"
         />
 
         <Route element={<PageNotFound />} path="*" />
